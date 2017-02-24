@@ -27,16 +27,32 @@ class App extends Component {
           <div className="logo" />
           <Menu theme="dark" mode={this.state.mode} defaultSelectedKeys={['1']}>
             <Menu.Item key="1">
-              <Icon type="user" />
-              <span className="nav-text">nav 1</span>
+              <Icon type="home" />
+              <span className="nav-text">Dashboard</span>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span className="nav-text">nav 2</span>
+              <Icon type="switcher" />
+              <span className="nav-text">Projects</span>
             </Menu.Item>
             <Menu.Item key="3">
-              <Icon type="upload" />
-              <span className="nav-text">nav 3</span>
+              <Icon type="hdd" />
+              <span className="nav-text">Database</span>
+            </Menu.Item>
+            <Menu.Item key="4">
+                <Icon type="mail" />
+                <span className="nav-text">Email</span>
+            </Menu.Item>
+            <Menu.Item key="5">
+                <Icon type="solution" />
+                <span className="nav-text">Snippets</span>
+            </Menu.Item>
+<Menu.Item key="6">
+                <Icon type="book" />
+                <span className="nav-text">Documentation</span>
+</Menu.Item>
+<Menu.Item key="7">
+                <Icon type="setting" />
+                <span className="nav-text">Settings</span>
             </Menu.Item>
           </Menu>
         </Sider>
