@@ -1,11 +1,81 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Table, Button } from 'antd';
 const { SubMenu } = Menu;
 const { Header, Sider, Content, Footer } = Layout;
 
 import './App.css';
 
 class App extends Component {
+
+    overview(props) {
+
+        const overviewTopics = [
+            {
+                key: '1',
+                text: 'Project Name',
+                disp: 'ServerChef Website',
+            },
+            {
+                key: '2',
+                text: 'Website Address',
+                action: 'link',
+                href: '//serverchef.dev',
+                prompt: 'Open Website'
+            },
+            {
+                key: '3',
+                text: 'Admin Interface',
+                action: 'link',
+                href: '//serverchef.dev/admin',
+                prompt: 'Open Admin'
+            },
+            {
+                key: '4',
+                text: 'Project Location',
+                disp: '~/websites/serverchef'
+            },
+            {
+                key: '5',
+                text: 'Runtime Environment',
+                action: 'link',
+                href: '#',
+                prompt: 'View Details'
+            }
+        ];
+
+        const columns = [
+            {
+                title: 'Topic',
+                dataIndex: 'text',
+                key: 'text'
+            },
+            {
+                title: 'Action',
+                dataIndex: 'action',
+                key: 'action',
+                render: (_, record) => {
+                    if ( record.action === 'link') {
+                        return (
+                            <a href={record.href}>
+                                <Button> {record.prompt} </Button>
+                            </a>
+                        )
+                    } else {
+                        return <div>{record.disp}</div>
+                    }
+                }
+            }
+        ]
+        return (
+            <Table
+                pagination={false}
+                bordered={false}
+                showHeader={false}
+                dataSource={overviewTopics}
+                columns={columns} />
+
+        )
+    }
     render() {
       return (
           <Layout>
@@ -61,7 +131,9 @@ class App extends Component {
                           </Menu>
                       </Sider>
                       <Content style={{ padding: '0 24px', minHeight: 280 }}>
-                          Content
+                          <h1>Overview</h1>
+                          <hr/>
+                          { this.overview() }
                       </Content>
                   </Layout>
               </Content>
