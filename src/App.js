@@ -10,10 +10,13 @@ class App extends Component {
 
     serviceStatus(props) {
         return (
-            <Row gutter={16} type="flex" justify="space-around">
+            <Row gutter={16}
+                 className="status-cards"
+                 type="flex"
+                 justify="space-around">
                 <Col span="8">
                     <Card className="status-card">
-                        <Icon className="service-icon" type="setting"/>
+                        <Icon className="service-icon" type="play-circle"/>
                         <div className="service-info">
                             <h2>Task Runner</h2>
                             <Badge status="success" text="Running" />
@@ -22,19 +25,46 @@ class App extends Component {
                 </Col>
                 <Col span="8">
                     <Card className="status-card">
-                        <Icon className="service-icon" type="setting"/>
+                        <Icon className="service-icon" type="cloud-download"/>
                         <div className="service-info">
-                            <h2>Task Runner</h2>
+                            <h2>Web Server</h2>
                             <Badge status="success" text="Running" />
                         </div>
                     </Card>
                 </Col>
                 <Col span="8">
                     <Card className="status-card">
-                        <Icon className="service-icon" type="setting"/>
+                        <Icon className="service-icon" type="code-o"/>
                         <div className="service-info">
-                            <h2>Task Runner</h2>
+                            <h2>PHP Runtime</h2>
                             <Badge status="success" text="Running" />
+                        </div>
+                    </Card>
+                </Col>
+                <Col span="8">
+                    <Card className="status-card">
+                        <Icon className="service-icon" type="hdd"/>
+                        <div className="service-info">
+                            <h2>MySQL Server</h2>
+                            <Badge status="success" text="Running" />
+                        </div>
+                    </Card>
+                </Col>
+                <Col span="8">
+                    <Card className="status-card">
+                        <Icon className="service-icon" type="lock"/>
+                        <div className="service-info">
+                            <h2>Local SSL</h2>
+                            <Badge status="default" text="Not Configured" />
+                        </div>
+                    </Card>
+                </Col>
+                <Col span="8">
+                    <Card className="status-card">
+                        <Icon className="service-icon" type="mail"/>
+                        <div className="service-info">
+                            <h2>Local Inbox</h2>
+                            <Badge status="success" text="Listening" />
                         </div>
                     </Card>
                 </Col>
