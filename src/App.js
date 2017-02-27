@@ -189,7 +189,11 @@ class App extends Component {
                                   <Icon type="link" />
                                   <span>Network</span>
                               </Menu.Item>
-                              <Menu.Item key='6'>
+                              <Menu.Item key='7'>
+                                  <Icon type="file-text" />
+                                  <span>Logs</span>
+                              </Menu.Item>
+                              <Menu.Item key='8'>
                                   <Icon type="setting" />
                                   <span>Settings</span>
                               </Menu.Item>
