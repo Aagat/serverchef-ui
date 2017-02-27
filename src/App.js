@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
+const { SubMenu } = Menu;
 const { Header, Sider, Content, Footer } = Layout;
 
 import './App.css';
 
 class App extends Component {
-  state = {
-      mode: 'horizontal'
-  };
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  }
-
-  render() {
+    render() {
       return (
           <Layout>
-              <Header>
+              <Header style={{ background: '#fff' }}>
                   <Menu
-                      theme='dark'
+                      theme='light'
                       mode='horizontal'
                       defaultSelectedKeys={['1']}
-                      style={{ lineHeight: '64px' }} >
-                        <Menu.Item key='1'>Item</Menu.Item>
-                        <Menu.Item key='2'>Item</Menu.Item>
+                      style={{ lineHeight: '64px', float: 'right' }} >
+                      <SubMenu key='projects'
+                               title={<span>serverchef.io &nbsp;<Icon type="down"/></span>}>
+                          <Menu.Item key='1'>serverchef.io</Menu.Item>
+                          <Menu.Item key='2'>aagat.com</Menu.Item>
+                      </SubMenu>
+                      <SubMenu key='user'
+                               title={<span>Aagat<Icon type="down"/></span>}>
+                          <Menu.Item key='1'>Profile</Menu.Item>
+                          <Menu.Item key='2'>Logout</Menu.Item>
+                      </SubMenu>
                   </Menu>
               </Header>
               <Content style={{ padding: '0 50px' }}>
