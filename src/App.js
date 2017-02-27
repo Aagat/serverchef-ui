@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, Table, Button } from 'antd';
+import { Row, Col, Card, Badge } from 'antd';
 const { SubMenu } = Menu;
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -7,7 +8,41 @@ import './App.css';
 
 class App extends Component {
 
-    overview(props) {
+    serviceStatus(props) {
+        return (
+            <Row gutter={16} type="flex" justify="space-around">
+                <Col span="8">
+                    <Card className="status-card">
+                        <Icon className="service-icon" type="setting"/>
+                        <div className="service-info">
+                            <h2>Task Runner</h2>
+                            <Badge status="success" text="Running" />
+                        </div>
+                    </Card>
+                </Col>
+                <Col span="8">
+                    <Card className="status-card">
+                        <Icon className="service-icon" type="setting"/>
+                        <div className="service-info">
+                            <h2>Task Runner</h2>
+                            <Badge status="success" text="Running" />
+                        </div>
+                    </Card>
+                </Col>
+                <Col span="8">
+                    <Card className="status-card">
+                        <Icon className="service-icon" type="setting"/>
+                        <div className="service-info">
+                            <h2>Task Runner</h2>
+                            <Badge status="success" text="Running" />
+                        </div>
+                    </Card>
+                </Col>
+            </Row>
+        );
+    }
+
+    overviewTable(props) {
 
         const overviewTopics = [
             {
@@ -133,7 +168,8 @@ class App extends Component {
                       <Content style={{ padding: '0 24px', minHeight: 280 }}>
                           <h1>Overview</h1>
                           <hr/>
-                          { this.overview() }
+                          { this.serviceStatus() }
+                          { this.overviewTable() }
                       </Content>
                   </Layout>
               </Content>

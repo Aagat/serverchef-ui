@@ -1,1 +1,21 @@
 @import '~antd/dist/antd.css';
+
+.service-info {
+    float: right;
+    width: 60%;
+}
+
+.service-icon {
+    float: left;
+    width: 40%;
+    line-height: 48px;
+    font-size: 48px;
+}
+
+.status-card {
+    padding: 20px 0;
+}
+
+.status-card .ant-card-body {
+    padding: 0px;
+}
