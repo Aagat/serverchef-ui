@@ -4,7 +4,7 @@ import { Row, Col, Card, Badge } from 'antd';
 const { SubMenu } = Menu;
 const { Header, Sider, Content, Footer } = Layout;
 
-import './App.css';
+import './App.css'; import TopMenu from './components/ui/TopMenu';
 
 class App extends Component {
 
@@ -145,22 +145,7 @@ class App extends Component {
       return (
           <Layout>
               <Header style={{ background: '#fff' }}>
-                  <Menu
-                      theme='light'
-                      mode='horizontal'
-                      defaultSelectedKeys={['serverchef']}
-                      style={{ lineHeight: '64px', float: 'right' }} >
-                      <SubMenu key='projects'
-                               title={<span>serverchef.io &nbsp;<Icon type="down"/></span>}>
-                          <Menu.Item key='serverchef'>serverchef.io</Menu.Item>
-                          <Menu.Item key='aagat'>aagat.com</Menu.Item>
-                      </SubMenu>
-                      <SubMenu key='user'
-                               title={<span><Icon type="poweroff"/></span>}>
-                          <Menu.Item key='1'><Icon type="poweroff"/>Shutdown</Menu.Item>
-                          <Menu.Item key='2'><Icon type="reload"/>Restart</Menu.Item>
-                      </SubMenu>
-                  </Menu>
+                  <TopMenu/>
               </Header>
               <Content style={{ padding: '0 50px' }}>
                   <Layout style={{ padding: '24px 0', background: '#fff', margin: '24px 0' }}>
