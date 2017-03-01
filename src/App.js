@@ -8,6 +8,12 @@ import TopMenu from './components/ui/TopMenu';
 import SideMenu from './components/ui/SideMenu';
 
 import Overview from './Overview';
+import Runtime from './Runtime';
+import Database from './Database';
+import Utilities from './Utilities';
+import Network from './Network';
+import Logs from './Logs';
+import Settings from './Settings';
 
 const routes = [
     {
@@ -19,8 +25,38 @@ const routes = [
         path: "/overview",
         component: Overview,
         exact: true
+    },
+    {
+        path: "/runtime",
+        component: Runtime,
+        exact: true
+    },
+    {
+        path: "/database",
+        component: Database,
+        exact: true
+    },
+    {
+        path: "/utilities",
+        component: Utilities,
+        exact: true
+    },
+    {
+        path: "/network",
+        component: Network,
+        exact: true
+    },
+    {
+        path: "/logs",
+        component: Logs,
+        exact: true
+    },
+    {
+        path: "/settings",
+        component: Settings,
+        exact: true
     }
-]
+];
 
 class App extends Component {
 
