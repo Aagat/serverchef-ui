@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import { Layout } from 'antd';
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -7,6 +8,19 @@ import TopMenu from './components/ui/TopMenu';
 import SideMenu from './components/ui/SideMenu';
 
 import Overview from './Overview';
+
+const routes = [
+    {
+        path: "/",
+        component: Overview,
+        exact: true
+    },
+    {
+        path: "/overview",
+        component: Overview,
+        exact: true
+    }
+]
 
 class App extends Component {
 
@@ -22,7 +36,9 @@ class App extends Component {
                           <SideMenu/>
                       </Sider>
                       <Content style={{ padding: '0 24px', minHeight: 280 }}>
-                          <Overview/>
+                          {routes.map((route, i) => {
+                               return (<Route key={i} {...route}/>);
+                           })}
                       </Content>
                   </Layout>
               </Content>
