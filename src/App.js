@@ -9,6 +9,7 @@ import SideMenu from './components/ui/SideMenu';
 
 import Overview from './Overview';
 import Runtime from './Runtime';
+import Runner from './Runner';
 import Database from './Database';
 import Utilities from './Utilities';
 import Network from './Network';
@@ -24,6 +25,11 @@ const routes = [
     {
         path: "/runtime",
         component: Runtime,
+        exact: true
+    },
+    {
+        path: "/runner",
+        component: Runner,
         exact: true
     },
     {

@@ -5,6 +5,7 @@ import { Menu, Icon } from 'antd';
 const icons = [
     'line-chart',
     'code-o',
+    'reload',
     'hdd',
     'select',
     'link',
