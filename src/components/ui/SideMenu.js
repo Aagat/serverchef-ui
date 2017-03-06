@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
+
+const icons = [
+    'line-chart',
+    'code-o',
+    'reload',
+    'hdd',
+    'select',
+    'link',
+    'file-text',
+    'setting'
+];
 
 class SideMenu extends Component {
     render() {
@@ -8,35 +20,18 @@ class SideMenu extends Component {
                     mode='inline'
                     defaultSelectedKeys={['1']}
                     style={{ height: '100%' }} >
-                    <Menu.Item key='1'>
-                        <Icon type="line-chart" />
-                        <span>Overview</span>
-                    </Menu.Item>
-                    <Menu.Item key='2'>
-                        <Icon type="code-o" />
-                        <span>Runtime</span>
-                    </Menu.Item>
-                    <Menu.Item key='3'>
-                        <Icon type="hdd" />
-                        <span>Database</span>
-                    </Menu.Item>
-                    <Menu.Item key='4'>
-                        <Icon type="select" />
-                        <span>Utilities</span>
-                    </Menu.Item>
-                    <Menu.Item key='5'>
-                        <Icon type="link" />
-                        <span>Network</span>
-                    </Menu.Item>
-                    <Menu.Item key='7'>
-                        <Icon type="file-text" />
-                        <span>Logs</span>
-                    </Menu.Item>
-                    <Menu.Item key='8'>
-                        <Icon type="setting" />
-                        <span>Settings</span>
-                    </Menu.Item>
-                </Menu>
+                {this.props.routes.map((route, i) => {
+                    return (
+                            <Menu.Item key={i+1}>
+                            <Link to={route.path}>
+                                <Icon type={icons[i]}/>
+                                <span>{route.component.name}</span>
+                            </Link>
+                            </Menu.Item>
+                    );
+                })
+                }
+            </Menu>
         );
     }
 }
